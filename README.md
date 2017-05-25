@@ -1,2 +1,0 @@
-# workshops
-curriculums and documentation 
