@@ -33,11 +33,11 @@ By programming a computer, we are meeting a computer halfway, we won't speak bin
 
 Code a series of HTML documents with the students:
 
-1. a document with <h1> <h2> and <p>
-2. wrap <em> around a word inside of a paragraph. wrap an <h1> around a word and notice that it is no longer in-line. Talk about block and inline concepts.
-3. side by side: do an inline style="" for a <h1> (wrong way of styling) and in another document style the <h1> in the header <style></style> section.
+1. a document with `<h1>`, `<h2>`, and `<p>`
+2. wrap `<em>` around a word inside of a paragraph. wrap an `<h1>` around a word and notice that it is no longer in-line. Talk about block and inline concepts.
+3. side by side: do an inline `style=""` for a `<h1>` (wrong way of styling) and in another document style the `<h1>` in the header `<style></style>` section.
 4. talk about "CSS selectors" in the printing press metaphors from earlier.
-5. introduce "class" as a way of selecting only certain kinds of <h1> or <p>
+5. introduce "class" as a way of selecting only certain kinds of `<h1>` or `<p>`
 
 In a gradual shift, move away from text and into colors divs with `background-color`
 
