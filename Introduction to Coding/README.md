@@ -10,13 +10,13 @@ This class is divided among 4 sessions meeting once a week
 
 # [Second Session: May 27](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class2.md)
 
+ - Interactive web pages, animations
  - Codes and languages, simple types of variables
- - Program flow, think like a computer
+ - Control flow, think like a computer
 
 # Third Session: June 3
 
  - Complex variable types
- - Interactive web pages
 
 # Fourth Session: June 10
 

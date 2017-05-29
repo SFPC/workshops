@@ -1,0 +1,19 @@
+
+h1{
+	font-size:30vmin;
+}
+a{
+	color: black;
+	position: relative;
+	top:0;
+	transition: all 0.1s ease-out;
+}
+a:visited{ }
+a:active{
+	color:white;
+	background-color: black;
+}
+a:hover{
+	top: -10px;
+	text-decoration: none;
+}

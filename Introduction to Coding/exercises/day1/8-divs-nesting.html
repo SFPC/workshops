@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body, div{
+	margin:0;
+	width:100%;
+	height:100%;
+}
+div{
+	box-sizing: border-box;
+	float:left;
+}
+.border{
+	border-width: 3px;
+	border-style: solid;
+}
+.green{
+	background-color: lightgreen;
+}
+.blue{
+	background-color: blue;
+}
+.red{
+	background-color: red;
+}
+.width50{
+	width:50%;	
+}
+.height50{
+	height:50%;
+}
+.width20{
+	width:20%;
+}
+.width80{
+	width:80%;
+}
+</style>
+</head>
+<body>
+	<div class="height50">
+		<div class="border width20 green"></div>
+		<div class="border width80 blue"></div>
+	</div>
+	<div class="height50">
+		<div class="border red"></div>
+	</div>
+</body>
+</html>
