@@ -8,7 +8,7 @@ This class is divided among 4 sessions meeting once a week
  - Full screen HTML
  - Painting with DIV
 
-# [Second Session: May 27](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class1.md)
+# [Second Session: May 27](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class2.md)
 
  - Codes and languages, simple types of variables
  - Program flow, think like a computer

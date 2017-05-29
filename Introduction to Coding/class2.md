@@ -4,7 +4,7 @@
 
 Let's summarize: CSS has a highly specific targeting system, called __selectors__, which can target elements (h1, p) or class or id names, or combinations of these. All manner of styling can follow once you target an element.
 
-[https://www.w3schools.com/cssref/css_selectors.asp](CSS Selectors on W3 Schools)
+### [CSS Selectors on W3 Schools](https://www.w3schools.com/cssref/css_selectors.asp)
 
 2 CSS topics to cover:
 
@@ -28,7 +28,7 @@ a{
 a:hover{ top: -10px; }
 ```
 
-Now is a good time to bring up the coordinate space. `-10` means __down 10__ rather than __up 10__. The reason that the top left corner is 0,0 is that this is where the beam started before it ran across the screen in old phosphorescent screen technology.
+Now is a good time to bring up the coordinate space. `-10` means __up 10__ rather than __down 10__. The reason that the top left corner is 0,0 is that this is where the beam started before it ran across the screen in old phosphorescent screen technology.
 
 ### Homework Idea: Re-code Josef Albers
 
@@ -36,7 +36,7 @@ Now is a good time to bring up the coordinate space. `-10` means __down 10__ rat
 
 Google image search "Josef Albers Interaction of Color", select an image that you feel has some life and animate it.
 
-Introduce keyframe animations:
+### Keyframe animations
 
 CSS:
 
@@ -54,14 +54,14 @@ CSS:
 HTML:
 
 ```html
-  <div class="orange smaller animate-stomp"></div>
+  <div class="orange animate-stomp"></div>
 ```
 
 # Introduction to Javascript
 
-### [http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html](MIPS instruction set)
+### [MIPS Instruction Set](http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html)
 
-In their early days, computers began to evolve abilities, here are 3 main ones:
+In their early days, computers evolved 3 important abilities:
 
  - ability to store things into memory and pull them back out
  - ask if numbers are equal, not equal, larger than or less than each other
@@ -122,7 +122,7 @@ Keep it simple! introduce a while loop first.
 ```
 var number = 0;
 while (number < 10){
-	number = number + 1;
+  number = number + 1;
 }
 ```
 
