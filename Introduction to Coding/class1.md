@@ -1,4 +1,6 @@
-# Introduction to HTML and CSS
+# Introduction to Coding @ SFPC
+
+## Class 1: Introduction to HTML and CSS
 
 the programming we will do with HTML is in the styling. Metaphors for HTML should be a Word Document (text with style), or assembling punches in an old printing press.
 
@@ -13,11 +15,13 @@ Picture hundreds of years ago running a printing press, your job is to set the p
 
 ![image](https://raw.githubusercontent.com/SFPC/workshops/master/Introduction%20to%20Coding/images/punches.jpg)
 
-These are phrases that relate to one punch, you add them as you hear them. But sometimes your friend says "switch to italics", and you don't put down a punch but instead changes the later punches.
+These are phrases that relate to one punch, you add them as you hear them. But sometimes your friend says "switch to italics", and you don't put down a punch but instead change your own behavior about selecting punches.
 
-Back to present day: If we are feeding letters to a computer to display on a webpage, we need a __symbol__ that says "now we are giving you a command instead of a letter".
+##### Back to present day
 
-HTML wraps a command beginning with `<` and ending with `>`
+If we are feeding letters to a computer to display on a webpage, we need a __symbol__ that says "now we are giving you a command instead of a letter".
+
+HTML wraps a command beginning with `<` and ending with `>`.
 
 ### Write an example 5-10 word phrase on the board
 
@@ -27,7 +31,7 @@ Let the students uncover the concept of start and stop tags, tell them about voi
 
 Focus on the way that students speak for a computer: "computers counting characters", "searching for word strings". Establish that students are coming to class with a posteriori knowledge about how they believe computers think.
 
-By programming a computer, we are meeting a computer halfway, we won't speak binary, computers can't speak English. Computers have a way of navigating the world, just as humans do. Our goal as coders is to learn to see how computers see so that when we express ourselves through code we shape the unformed parts of our ideas to be most digestible by a computer.
+> By programming a computer, we are meeting a computer halfway, we won't speak binary, computers won't speak a human language. Computers have a way of navigating the world, just as humans do - our goal as coders is to learn to see how computers see so that when we express ourselves through code we shape the unformed parts of our ideas to be most easily interpreted by a computer.
 
 # In-class Coding
 
@@ -65,8 +69,30 @@ Exercise in full-screen painting with div
 1. introduce container divs
  - the full screen contains at first 2 container divs
  - each container recursively splits into 2 container divs, vertically or horizontally, by percentages.
+
+![image](https://raw.githubusercontent.com/SFPC/workshops/master/Introduction%20to%20Coding/images/containers.jpg)
+
 2. introduce borders, and to keep borders inside of divs add the CSS: `* { box-sizing: border-box; }`
 
 3. okay if you want to introduce border-left, border-top, etc. or make it easier and don't require borders to precisely reflect the painting.
+
+Important point for students to get is that you can read the code top-down, but a better way might be to read it in nested-order, reading tab space left to right, or depth-first.
+
+```html
+<div>
+  <div>
+    <div class="color-1"></div>
+    <div>
+      <div class="color-2"></div>
+      <div class="color-3"></div>
+    </div>
+  </div>
+  <div>
+    <div class="color-4"></div>
+  </div>
+</div>
+```
+
+color-1 and color-4 are the same *tab space* in from the left
 
 ![image](https://raw.githubusercontent.com/SFPC/workshops/master/Introduction%20to%20Coding/images/mondrian.gif)
