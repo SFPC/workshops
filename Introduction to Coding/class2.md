@@ -1,8 +1,10 @@
 # Introduction to Coding @ SFPC
 
+#### [Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day2)
+
 ## Class 2: Interactive CSS and Introduction to Javascript
 
-##### [Previous Class](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class2.md)
+### [⬅︎ Back: Class 1](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class1.md)
 
 Let's summarize: CSS has a highly specific targeting system, called __selectors__, which can target elements (h1, p) or class or id names, or combinations of these. All manner of styling can follow once you target an element.
 

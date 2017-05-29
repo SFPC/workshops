@@ -1,5 +1,7 @@
 # Introduction to Coding @ SFPC
 
+#### [Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day1)
+
 ## Class 1: Introduction to HTML and CSS
 
 the programming we will do with HTML is in the styling. Metaphors for HTML should be a Word Document (text with style), or assembling punches in an old printing press.
@@ -43,6 +45,8 @@ Code a series of HTML documents with the students:
 4. talk about "CSS selectors" in the printing press metaphors from earlier.
 5. introduce "class" as a way of selecting only certain kinds of `<h1>` or `<p>`
 
+### [Exercise 7: split screen DIV](https://rawgit.com/SFPC/workshops/master/Introduction%20to%20Coding/exercises/day1/7-divs-split-vert.html)
+
 In a gradual shift, move away from text and into colors divs with `background-color`
 
 1. Revisit inline and block by introducing `<span>` and `<div>`
@@ -56,6 +60,8 @@ Exercise in full-screen painting with div
 3. full-page painting with DIV. split the screen into 2 colors: 
  - 2 divs horizontally (on top) divs are already block elements
  - 2 divs vertically as columns, use `float:left`
+
+### [Exercise 7: split screen DIV](https://rawgit.com/SFPC/workshops/master/Introduction%20to%20Coding/exercises/day1/7-divs-split-vert.html)
 
 ### Homework Idea: Flag
 
