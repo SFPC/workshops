@@ -1,8 +1,10 @@
 # Introduction to Coding @ SFPC
 
-#### [Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day1)
+### [► Next: Class 2](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class2.md)
 
 ## Class 1: Introduction to HTML and CSS
+
+### [Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day1)
 
 the programming we will do with HTML is in the styling. Metaphors for HTML should be a Word Document (text with style), or assembling punches in an old printing press.
 
@@ -45,8 +47,6 @@ Code a series of HTML documents with the students:
 4. talk about "CSS selectors" in the printing press metaphors from earlier.
 5. introduce "class" as a way of selecting only certain kinds of `<h1>` or `<p>`
 
-### [Exercise 7: split screen DIV](https://rawgit.com/SFPC/workshops/master/Introduction%20to%20Coding/exercises/day1/7-divs-split-vert.html)
-
 In a gradual shift, move away from text and into colors divs with `background-color`
 
 1. Revisit inline and block by introducing `<span>` and `<div>`
@@ -81,6 +81,8 @@ Exercise in full-screen painting with div
 2. introduce borders, and to keep borders inside of divs add the CSS: `* { box-sizing: border-box; }`
 
 3. okay if you want to introduce border-left, border-top, etc. or make it easier and don't require borders to precisely reflect the painting.
+
+### [Exercise 8: nesting DIV](https://rawgit.com/SFPC/workshops/master/Introduction%20to%20Coding/exercises/day1/8-divs-nesting.html)
 
 Important point for students to get is that you can read the code top-down, but a better way might be to read it in nested-order, reading tab space left to right, or depth-first.
 
