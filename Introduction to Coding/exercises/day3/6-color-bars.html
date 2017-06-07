@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body{
+	margin:0;
+	width:100%;
+	height:100%;
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+div{
+	flex: 1;
+}
+</style>
+</head>
+<body>
+<script>
+function myFunction(){
+	document.body.innerHTML = "";
+	var count = 0;
+	var rows = Math.random() * 10;
+	while(count < rows){
+		var greenDecimal = Math.random() * 256;
+		var green = Math.floor(greenDecimal);
+		var color = "rgb(89, " + green + ", 199)";
+		document.body.innerHTML = document.body.innerHTML + "<div style='background-color:" + color + "'></div>";
+		count = count + 1;
+	}
+}
+
+myFunction();
+
+// whenever there is a click, run what is inside the function
+// document.addEventListener("click", function(){});
+
+document.addEventListener("click", function(){
+	// code here
+	myFunction();
+});
+
+</script>
+</body>
+</html>

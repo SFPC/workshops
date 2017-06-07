@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body{
+	margin:0;
+	width:100%;
+	height:100%;
+}
+div{
+	height:100%;
+	width:100%;
+}
+</style>
+</head>
+<body>
+<script>
+var count = 0;
+while(count < 10){
+	var greenDecimal = Math.random() * 256;
+	var green = Math.floor(greenDecimal);
+	var color = "rgb(89, " + green + ", 199)";
+	document.body.innerHTML = document.body.innerHTML + "<div style='background-color:" + color + "'></div>";
+	count = count + 1;
+}
+</script>
+</body>
+</html>
