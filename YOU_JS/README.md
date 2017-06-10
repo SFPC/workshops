@@ -407,7 +407,75 @@ There are many node modules that help you parse command line arguments. A good o
 
 ## Writing a front-end library
 
-So far we've just been looking at writing modules for node, but not for the browser.
+So far we've just been looking at writing modules for node, but not for the browser. There are a few major differences.
+
+* Front-end code can manipulate html using the DOM (Document Object Model)
+* Front-end code can't do anything with local files (as, you can't use the node `fs` module)
+* You can't use `require` or `module.exports` (without doing some additional setup)
+* You must be careful to not pollute the global namespace.
+
+### The global namespace
+
+The "global namespace" refers to all functions and variables that are defined in the global scope (global variables).
+
+```javascript
+// hello is global
+function hello() {
+	console.log('hi');
+}
+
+// name is also global
+var name = "Sam";
+
+// also global
+function bye() {
+	// but "message" is local to this function
+	var message = "bye bye";
+	console.log(message)
+}
+
+// person is global, but the variables and functions inside it are not
+var person = {
+	name: "Sam",
+	age: 1002,
+	wave: function() {
+		console.log("Sam waves at you.")
+	}
+};
+```
+
+Variables defined in the global namespace are accessible to all other scripts. If you save the above code into a file called `sam.js` and stick it in your html with a script tag, all other scripts will be able to access `hello`, `bye` and so on. 
+
+```html
+<script src="sam.js"></script>
+<script src="main.js"></script>
+<!-- everything from sam.js can be accessed in main.js -->
+```
+
+While it can sometimes be useful to share variables between scripts, it's generally a bad idea and should always be avoided when possible. For example, if you have a function in `main.js` called `hello` it will override the `hello` in `sam.js`. This is known as a "name collision".
+
+It is *especially* important to not put things in the global namespace when writing a library, since name collisions can create really unpredictable bugs for your users. Putting variables in the global scope is called "polluting the global namespace." To avoid it you need to wrap all of your code in a single function.
+
+### Self-invoking functions
+
+A common pattern to avoid polluting the global namespace is to wrap your code in a self-invoking function. This is a function that immediately calls itself.
+
+```javascript
+(function(module){
+	function sayHi(){
+		console.log('hi');
+	}
+	
+	function sayBye(){
+		console.log('bye');
+	}
+	
+	module.sayHi = sayHi;
+	
+})(window);
+
+```
+
 
 ### Browserify
 
@@ -431,25 +499,6 @@ browserify script.js --standalone Sam --outfile dist/script.js
 
 This will combine all the files that have been required from `script.js` into a file called `dist/script.js`. The `--standalone` option creates a single object to hold all the code you put in `module.exports`. In the example I've called my object `Sam`, but you should change this of course to whatever you want.
 
-### Plain javascript
-
-If you prefer you can also write front-end libraries without the use of node tools. The important thing to remember however is to keep the global namespace clean. This means need to wrap all of your code in a self-executing function, like so:
-
-```javascript
-(function(module){
-	function sayHi(){
-		console.log('hi');
-	}
-	
-	function sayBye(){
-		console.log('bye');
-	}
-	
-	module.sayHi = sayHi;
-	
-})(window);
-
-```
 
 
 
