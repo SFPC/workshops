@@ -334,3 +334,122 @@ documentation readme sam.js --section=API
 5. Hit save
 
 Visit your site at: `https://GITHUB_USERNAME.github.io/PROJECT_NAME`
+
+## Writing a command line program
+
+We can execute node programs by typing `node script.js` but we can also tell our operating system to make our script behave like a regular command line program. To do so, first add this line to the top of your script:
+
+```javascript
+#!/usr/bin/env node
+
+//the rest of your script goes here
+```
+
+Then we need to tell our OS that our script is executable. In the terminal, type:
+
+```
+chmod u+x script.js
+```
+
+Now you can run your program by typing:
+
+```
+./script.js
+```
+
+(The `./` refers to our current directory)
+
+If you want to make a command line program that others can install with NPM, you also need to add a few lines to your `package.json` file:
+
+```
+"bin": {
+    "sam": "./script.js"
+},
+```
+
+This will create an alias called `sam` that's linked to your script. You can call it whatever you want of course. Now your users will be able to just type `sam` from their terminals and run your program.
+
+### Command line arguments
+
+Most command line programs take arguments. Think of this as passing in instructions or variables to your script.
+
+For example, the program `sort` will sort text files for you alphabetically. You might run it like so:
+
+```
+sort sometextfile.txt
+```
+
+In this case, `sometextfile.txt` is an argument, telling the program what file you want to operate on.
+
+You can access these arguments through node with a special variable called `process.argv`.
+
+`process.argv` is an array. The first two elements of the array will *always* be 1) the location of nodejs on your system, and 2) the file that you executed. The rest will contain whatever the user typed after the name of your script.
+
+For example if you type `./script.js hello you` then `process.argv` will be something like:
+
+```
+[
+  'node',
+  'script.js',
+  'hello',
+  'you'
+]
+```
+
+You can then access those variables the way you would normally access an array, like so
+
+```
+var firstArgument = process.argv[2]
+// firstArgument would be "hello"
+```
+
+There are many node modules that help you parse command line arguments. A good one is [commander](https://github.com/tj/commander.js/).
+
+## Writing a front-end library
+
+So far we've just been looking at writing modules for node, but not for the browser.
+
+### Browserify
+
+Many front-end libraries are actually written using nodejs toolchains. Two tools in particular are useful: [browserify](http://browserify.org/) and [webpack](https://webpack.github.io/). 
+
+Browserify is a bit easier to get started with, so we'll stick with that.
+
+Browserify allows you to split your front-end code into multiple files which can be "required" by each other just the way back-end node code does, and provides a way for you to export your library without polluting the global namespace.
+
+First install it globally:
+
+```
+npm install -g browserify
+```
+
+Then run it on your main file:
+
+```
+browserify script.js --standalone Sam --outfile dist/script.js
+```
+
+This will combine all the files that have been required from `script.js` into a file called `dist/script.js`. The `--standalone` option creates a single object to hold all the code you put in `module.exports`. In the example I've called my object `Sam`, but you should change this of course to whatever you want.
+
+### Plain javascript
+
+If you prefer you can also write front-end libraries without the use of node tools. The important thing to remember however is to keep the global namespace clean. This means need to wrap all of your code in a self-executing function, like so:
+
+```javascript
+(function(module){
+	function sayHi(){
+		console.log('hi');
+	}
+	
+	function sayBye(){
+		console.log('bye');
+	}
+	
+	module.sayHi = sayHi;
+	
+})(window);
+
+```
+
+
+
