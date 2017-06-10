@@ -2,9 +2,19 @@
 
 ### [◄ Back: Class 1](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class1.md)
 
+### [► Next: Class 3](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class3.md)
+
 ## Class 2: Interactive CSS and Introduction to Javascript
 
-### [Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day2)
+[Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day2)
+
+### Goal
+
+* Introduce interactive CSS
+* Introduce Javascript in 3 parts. "computers have/can:"
+    * memory (save and get back)
+    * do arithmetic + - * / (and compare, equal, less than)
+    * normally read program top-down, can skip and revisit code (loop, if)
 
 Let's summarize: CSS has a highly specific targeting system, called __selectors__, which can target elements (h1, p) or class or id names, or combinations of these. All manner of styling can follow once you target an element.
 
@@ -61,7 +71,16 @@ HTML:
   <div class="orange animate-stomp"></div>
 ```
 
+---
+
 # Introduction to Javascript
+
+### Goals
+
+* Learn simple javascript storage, arithmetic, and control flow
+* Introduce 3 types: numbers, strings, booleans
+* Print your work to the console `console.log`
+* Transfer your console printing to the DOM `document.body.innerHTML = ...`
 
 ### [MIPS Instruction Set](http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html)
 
@@ -132,3 +151,20 @@ while (number < 10){
 
 Students should be able to describe what will happen to this code. Console log `number` inside of the loop to watch it count up. console log it again at the end of the program outside of the loop to show that it is equal to 10 (which proves the `number < 10` statement false)
 
+## Homework Idea
+
+Use Javascript to create a HTML page that looks like this:
+
+```html
+<h1>0</h1>
+<h1>1</h1>
+<h1>2</h1>
+<h1>3</h1>
+...
+<h1>99</h1>
+```
+
+riffs on the same idea
+
+* same list as above but the numbers are listed backwards
+* same as above but skip the number 13, skip numbers that end in "0"
