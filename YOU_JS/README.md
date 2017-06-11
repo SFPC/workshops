@@ -458,7 +458,7 @@ It is *especially* important to not put things in the global namespace when writ
 
 ### Self-invoking functions
 
-A common pattern to avoid polluting the global namespace is to wrap your code in a self-invoking function. This is a function that immediately calls itself.
+A common pattern to avoid polluting the global namespace is to wrap your code in a self-invoking function. This is a function that immediately calls itself. 
 
 ```javascript
 (function(module){
@@ -475,6 +475,7 @@ A common pattern to avoid polluting the global namespace is to wrap your code in
 })(window);
 
 ```
+All the variable and function definitions are scoped to the outer wrapper function. At the very end we decide what to make available to the global scope.
 
 
 ### Browserify
