@@ -1,16 +1,8 @@
 # Introduction to Coding Workshop
 
-This class is a hands-on, minimum-dependency, cross-platform introduction to coding targeting beginners with no experience. All coding will be done inside .html files, learning HTML, CSS, and javascript. 
+This class is a hands-on, minimum-dependency, cross-platform introduction to coding targeting beginners with no experience. Class focus is on Javascript, also learning HTML, CSS, and Processing.
 
-## Goals
-
-* convey as many visual metaphors and vocabulary as possible
-* little of HTML and CSS, spend as much time in javascript as possible
-* as much class time as possible spent coding with the teacher
-
-> Don't use any libraries, such as JQuery or p5.js. Each exercise is from a blank .html, the students write everything. The effect is that the students can hold in their heads the universe of code as they know it.
-
-## Material
+## Class Material
 
 This class is divided among 4 sessions meeting once a week
 
@@ -32,11 +24,16 @@ This class is divided among 4 sessions meeting once a week
 * Functions
 * Keyboard and mouse input
 
-# Fourth Session: June 10
+# [Fourth Session: June 10](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class4.md)
 
-* Events
-* Complex control flow
-* Game Loops
+* Drawing with the mouse
+* Thinking beyond language syntax
+* Screensaver, Game loops
+
+## Approach
+
+> Don't use any libraries, such as JQuery or p5.js. The students write everything from a blank HTML. The effect is that the students can hold in their heads the universe of code as they know it. Less lecture, more coding together. Code without shortcuts, code long-form, be like Maria Montessori, be on the students' level with them. Develop a vibrant landscape of visual metaphors. Convey as much vocabulary as possible.
+
 
 ## Tuition 
 
