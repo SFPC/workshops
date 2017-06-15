@@ -334,3 +334,172 @@ documentation readme sam.js --section=API
 5. Hit save
 
 Visit your site at: `https://GITHUB_USERNAME.github.io/PROJECT_NAME`
+
+## Writing a command line program
+
+We can execute node programs by typing `node script.js` but we can also tell our operating system to make our script behave like a regular command line program. To do so, first add this line to the top of your script:
+
+```javascript
+#!/usr/bin/env node
+
+//the rest of your script goes here
+```
+
+Then we need to tell our OS that our script is executable. In the terminal, type:
+
+```
+chmod u+x script.js
+```
+
+Now you can run your program by typing:
+
+```
+./script.js
+```
+
+(The `./` refers to our current directory)
+
+If you want to make a command line program that others can install with NPM, you also need to add a few lines to your `package.json` file:
+
+```
+"bin": {
+    "sam": "./script.js"
+},
+```
+
+This will create an alias called `sam` that's linked to your script. You can call it whatever you want of course. Now your users will be able to just type `sam` from their terminals and run your program.
+
+### Command line arguments
+
+Most command line programs take arguments. Think of this as passing in instructions or variables to your script.
+
+For example, the program `sort` will sort text files for you alphabetically. You might run it like so:
+
+```
+sort sometextfile.txt
+```
+
+In this case, `sometextfile.txt` is an argument, telling the program what file you want to operate on.
+
+You can access these arguments through node with a special variable called `process.argv`.
+
+`process.argv` is an array. The first two elements of the array will *always* be 1) the location of nodejs on your system, and 2) the file that you executed. The rest will contain whatever the user typed after the name of your script.
+
+For example if you type `./script.js hello you` then `process.argv` will be something like:
+
+```
+[
+  'node',
+  'script.js',
+  'hello',
+  'you'
+]
+```
+
+You can then access those variables the way you would normally access an array, like so
+
+```
+var firstArgument = process.argv[2]
+// firstArgument would be "hello"
+```
+
+There are many node modules that help you parse command line arguments. A good one is [commander](https://github.com/tj/commander.js/).
+
+## Writing a front-end library
+
+So far we've just been looking at writing modules for node, but not for the browser. There are a few major differences.
+
+* Front-end code can manipulate html using the DOM (Document Object Model)
+* Front-end code can't do anything with local files (as, you can't use the node `fs` module)
+* You can't use `require` or `module.exports` (without doing some additional setup)
+* You must be careful to not pollute the global namespace.
+
+### The global namespace
+
+The "global namespace" refers to all functions and variables that are defined in the global scope (global variables).
+
+```javascript
+// hello is global
+function hello() {
+	console.log('hi');
+}
+
+// name is also global
+var name = "Sam";
+
+// also global
+function bye() {
+	// but "message" is local to this function
+	var message = "bye bye";
+	console.log(message)
+}
+
+// person is global, but the variables and functions inside it are not
+var person = {
+	name: "Sam",
+	age: 1002,
+	wave: function() {
+		console.log("Sam waves at you.")
+	}
+};
+```
+
+Variables defined in the global namespace are accessible to all other scripts. If you save the above code into a file called `sam.js` and stick it in your html with a script tag, all other scripts will be able to access `hello`, `bye` and so on. 
+
+```html
+<script src="sam.js"></script>
+<script src="main.js"></script>
+<!-- everything from sam.js can be accessed in main.js -->
+```
+
+While it can sometimes be useful to share variables between scripts, it's generally a bad idea and should always be avoided when possible. For example, if you have a function in `main.js` called `hello` it will override the `hello` in `sam.js`. This is known as a "name collision".
+
+It is *especially* important to not put things in the global namespace when writing a library, since name collisions can create really unpredictable bugs for your users. Putting variables in the global scope is called "polluting the global namespace." To avoid it you need to wrap all of your code in a single function.
+
+### Self-invoking functions
+
+A common pattern to avoid polluting the global namespace is to wrap your code in a self-invoking function. This is a function that immediately calls itself. 
+
+```javascript
+(function(module){
+	function sayHi(){
+		console.log('hi');
+	}
+	
+	function sayBye(){
+		console.log('bye');
+	}
+	
+	module.sayHi = sayHi;
+	
+})(window);
+
+```
+All the variable and function definitions are scoped to the outer wrapper function. At the very end we decide what to make available to the global scope.
+
+
+### Browserify
+
+Many front-end libraries are actually written using nodejs toolchains. Two tools in particular are useful: [browserify](http://browserify.org/) and [webpack](https://webpack.github.io/). 
+
+Browserify is a bit easier to get started with, so we'll stick with that.
+
+Browserify allows you to split your front-end code into multiple files which can be "required" by each other just the way back-end node code does, and provides a way for you to export your library without polluting the global namespace.
+
+First install it globally:
+
+```
+npm install -g browserify
+```
+
+Then run it on your main file:
+
+```
+browserify script.js --standalone Sam --outfile dist/script.js
+```
+
+This will combine all the files that have been required from `script.js` into a file called `dist/script.js`. The `--standalone` option creates a single object to hold all the code you put in `module.exports`. In the example I've called my object `Sam`, but you should change this of course to whatever you want.
+
+
+
+
