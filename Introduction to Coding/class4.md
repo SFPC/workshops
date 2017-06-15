@@ -2,7 +2,7 @@
 
 ### [◄ Back: Class 3](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class3.md)
 
-## Class 4: Dynamically-Generated Content, Javascript Interactivity
+## Class 4: Mouse drawing, more Javascript, Game loops
 
 [Follow along with in-class exercises](https://github.com/SFPC/workshops/tree/master/Introduction%20to%20Coding/exercises/day4)
 
