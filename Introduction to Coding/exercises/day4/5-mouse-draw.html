@@ -1,0 +1,43 @@
+<html>
+<head>
+<style>
+html, body{
+	width:100%;
+	height:100%;
+}
+div{
+	width:50px;
+	height:50px;
+	background-color: black;
+	position: absolute;
+	border-radius: 25px;
+}
+</style>
+</head>
+<body>
+<script>
+var color = 0;
+var range = 20;       // 0-360 color range
+var startColor = 200; // 0-360 color starting point
+var speed = 0.03;
+document.onmousemove = function(event){
+	// console.log(event);
+	var element = document.createElement('div');
+	element.style.top = event.clientY;
+	element.style.left = event.clientX;
+	// set changing size, width and height
+	var sinSize = Math.floor((Math.sin(color)+1)*25 + 5);
+	element.style.width = sinSize;
+	element.style.height = sinSize;
+	// set changing color
+	var sinColor = Math.floor((Math.sin(color)+1) * range + startColor);
+	element.style.backgroundColor = "hsl(" + sinColor + ", 100%, 50%)";
+	color = color + speed;
+	// append object
+	document.body.appendChild(element);
+}
+</script>
+</body>
+</html>
+
+

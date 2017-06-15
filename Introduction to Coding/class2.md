@@ -10,26 +10,31 @@
 
 ### Goal
 
-* Introduce interactive CSS
+* Introduce Chrome console
+    * Look at / edit a website
+* Introduce interactive CSS (`:hover`), animations
 * Introduce Javascript in 3 parts. "computers have/can:"
-    * memory (save and get back)
-    * do arithmetic + - * / (and compare, equal, less than)
+    * memory (save and use for later)
+    * do arithmetic `+` `-` `*` `/` (and compare: equal, less than)
     * normally read program top-down, can skip and revisit code (loop, if)
 
-Let's summarize: CSS has a highly specific targeting system, called __selectors__, which can target elements (h1, p) or class or id names, or combinations of these. All manner of styling can follow once you target an element.
+### Last Class Summary
+CSS has a highly specific targeting system, called __selectors__, which can target elements (h1, p) or class or id names, or combinations of these. All manner of styling can follow once you target an element.
 
 ### [CSS Selectors on W3 Schools](https://www.w3schools.com/cssref/css_selectors.asp)
 
 2 CSS topics to cover:
 
- - interactivity (mouse hover over a link)
- - CSS Animations
+* interactivity (mouse hover over a link)
+* CSS Animations
 
-# a:hover
+# Today's Exercises
+
+## a:hover
 
 Make a simple HTML page with just our name, large font filling up the screen, and wrap it in an `a href`. Make use of all of the `a, a:hover, a:visited, a:active` style them each differently, watch as the mouse triggers all 4 of these. a:visited will take some explaining, people are usually familiar with the blue and purple links.
 
-# animations
+## animations
 
 Add the following code to the `a` and `a:hover`:
 
@@ -75,6 +80,12 @@ HTML:
 
 # Introduction to Javascript
 
+A huge world of possibility opens up, summarize it in 3 parts:
+
+1. memory
+2. arithmetic and compare
+3. control flow 
+
 ### Goals
 
 * Learn simple javascript storage, arithmetic, and control flow
@@ -82,19 +93,26 @@ HTML:
 * Print your work to the console `console.log`
 * Transfer your console printing to the DOM `document.body.innerHTML = ...`
 
+## Lecture
+
 ### [MIPS Instruction Set](http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html)
 
 In their early days, computers evolved 3 important abilities:
 
- - ability to store things into memory and pull them back out
- - ask if numbers are equal, not equal, larger than or less than each other
- - control flow: not simply read the program top-down but jump around: go back up (loop), skip bits of code (branching)
+* ability to store things into memory and pull them back out
+* ask if numbers are equal, not equal, larger than or less than each other
+* control flow: not simply read the program top-down but jump around: go back up (loop), skip bits of code (branching)
 
 Javascript gets us access to these parts of a computer.
 
-### var
+## var
 
-what are all the things that we can put inside of a variable? Let's start small: numbers and strings.
+**var** is very important. the moment you see that, imagine the computer digs a little hole in the memory, like you dig to plant a plant in the garden.
+
+what are all the things that we can put inside of a variable? Let's start small: 
+
+* numbers
+* strings
 
 ```javascript
 var number = 0;
@@ -110,20 +128,26 @@ introduce console.log becuase we want to be able to see what we are doing. Apolo
 ```javascript
 console.log(number);
 console.log(word);
+```
 
+## Arithmetic
+
+```javascript
 console.log(number + 5);
 console.log(word + 5);
 ```
 
-the addition operator `+` means 2 different things, depending on what __type__ of variable this is.
+the addition operator `+` means *2 different things*, depending on what __type__ of variable this is.
 
 ### +=
 
-Don't introduce `+=` operator yet, but introduce the concept
+Don't introduce `+=` operator yet, but introduce the concept. 
 
 ```javascript
 number = number + 5;
 ```
+
+> As a general rule, delay the introduction of short-hand code notation, even if you don't code that way, adopt the long-form for the students. Be like Maria Montessori, be on their level.
 
 ### If
 
@@ -140,7 +164,7 @@ Introduce `else` and `if else`
 
 ### Loop
 
-Keep it simple! introduce a while loop first.
+Keep it simple! introduce a while loop first:
 
 ```
 var number = 0;
@@ -149,7 +173,7 @@ while (number < 10){
 }
 ```
 
-Students should be able to describe what will happen to this code. Console log `number` inside of the loop to watch it count up. console log it again at the end of the program outside of the loop to show that it is equal to 10 (which proves the `number < 10` statement false)
+Students should be able to describe what will happen to this code before running it. Console log `number` inside of the loop to watch it count up. console log it again at the end of the program outside of the loop to show that it is equal to 10 (which proves the `number < 10` statement false)
 
 ## Homework Idea
 

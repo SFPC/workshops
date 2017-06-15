@@ -5,10 +5,10 @@ This class is a hands-on, minimum-dependency, cross-platform introduction to cod
 ## Goals
 
 * convey as many visual metaphors and vocabulary as possible
-* learn only enough HTML and CSS to serve as a foundation for the more important subject: javascript
-* as much class time as possible is spent coding together
+* little of HTML and CSS, spend as much time in javascript as possible
+* as much class time as possible spent coding with the teacher
 
-> it's important to not use any libraries, such as JQuery or p5.js. Each exercise is from a blank .html, the students write everything. The effect is that the students can hold in their heads the universe of code as they know it.
+> Don't use any libraries, such as JQuery or p5.js. Each exercise is from a blank .html, the students write everything. The effect is that the students can hold in their heads the universe of code as they know it.
 
 ## Material
 
@@ -29,11 +29,14 @@ This class is divided among 4 sessions meeting once a week
 # [Third Session: June 3](https://github.com/SFPC/workshops/blob/master/Introduction%20to%20Coding/class3.md)
 
 * Complex variable types
+* Functions
+* Keyboard and mouse input
 
 # Fourth Session: June 10
 
-* Animation
-* Game Loops 
+* Events
+* Complex control flow
+* Game Loops
 
 ## Tuition 
 

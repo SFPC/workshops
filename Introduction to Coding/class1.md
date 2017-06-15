@@ -9,21 +9,21 @@
 ### Goal
 
 * Introduce HTML and CSS, the visual metaphor will be a printing press or word-processing document
-* CSS is all about *targeting* things on a page
-* HTML is top-down, how to move beyond and harness the full-screen
+* CSS, not just for styling, talk about how it is for *targeting* things on a page
+* HTML is top-down, left-right, how to move beyond and use the full-screen
 
 # Lecture
 
 ### HTML
 
-Picture hundreds of years ago running a printing press, your job is to set the punches while your friend dictates letters to you: 
+You are operating a printing press, your job is to set the punches while your friend dictates letters to you: 
 
 * "capital a"
 * "b"
 * "comma"
 * "space"
 
-But occasionally your friend says "switch to italics", and with that instruction, you don't put down a punch but instead change your behavior about future punches.
+But occasionally your friend says "switch to italics", and you don't put down a punch but instead change your behavior about future punches.
 
 >If we are feeding letters to a computer to display on a webpage, we need a *symbol* that says "now we are giving you a command instead of a letter"
 
